@@ -26,7 +26,9 @@ const App = () => {
 };
 //Establish hooks and define routes. Routes are defined by  
 //declaring the path to the component and specifying which 
-//component it is going to.
+//component it is going to. Routes going outside the directory
+//are started with a dot, followed by a backslash to denote
+//the filepath.
 
 
 
