@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MovieList from './Movies/Movie';
 import SavedList from './Movies/SavedList';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
@@ -13,13 +13,20 @@ const App = () => {
 
   return (
     <div>
-      <SavedList list={savedList} />
-    <Router>
-      <Route path='/Movies/MovieList' component={MovieList} />
-      {/* <Route path='/movies/:id' component={id}></Route> */}
-    </Router>
+      {/* <SavedList list={savedList} /> */}
+      <Route exact path="/">
+        <MovieList/>
+      </Route>
+      <Route path="/Movie/MovieList/">
+        <Movie/>
+      </Route>
     </div>
   );
 };
+//Establish hooks and define routes. Routes are defined by  
+//declaring the path to the component and specifying which 
+//component it is going to.
+
+
 
 export default App;
