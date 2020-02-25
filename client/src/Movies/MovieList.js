@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const MovieList = props => {
@@ -28,6 +30,9 @@ const MovieList = props => {
 }
 
 function MovieDetails({ movie }) {
+  const params = useParams();
+  console.log(movie)
+  // const movieCard = movie.find( item => params.id === item.id)
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
